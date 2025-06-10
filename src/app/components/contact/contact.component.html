@@ -1,0 +1,45 @@
+<section class="contact-container" [@fadeIn]>
+  <h2>Contact Me</h2>
+  <p class="contact-intro">
+    Interested in working together or have a question? Feel free to reach out through the form below.
+  </p>
+
+  <form (ngSubmit)="sendMessage()" #contactForm="ngForm" class="contact-form">
+    <div class="form-group">
+      <input
+        type="text"
+        [(ngModel)]="name"
+        name="name"
+        placeholder="Your Name"
+        required
+        class="form-control"
+      />
+    </div>
+
+    <div class="form-group">
+      <input
+        type="email"
+        [(ngModel)]="email"
+        name="email"
+        placeholder="Your Email"
+        required
+        class="form-control"
+      />
+    </div>
+
+    <div class="form-group">
+      <textarea
+        [(ngModel)]="message"
+        name="message"
+        placeholder="Your Message"
+        required
+        class="form-control"
+        rows="5"
+      ></textarea>
+    </div>
+
+    <button type="submit" class="send-button" [disabled]="!contactForm.form.valid">
+      Send Message
+    </button>
+  </form>
+</section>

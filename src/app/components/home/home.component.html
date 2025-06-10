@@ -1,0 +1,23 @@
+<section class="home-container">
+    <div class="text-content" [@slideFade]>
+        <h1>Hello, I'm <span>Dharaneesh</span></h1>
+        <h2>Full Stack Developer</h2>
+        <p>
+            A passionate full-stack developer who bridges the gap between software engineering and intelligent systems. 
+            I specialize in building responsive, scalable web applications, with a strong focus on clean code, performance, 
+            and intuitive UI/UX."
+        </p>
+
+        <div class="buttons">
+            <a href="assets/dharaneesh-resume.pdf" download>
+                <button class="resume">Resume</button>
+            </a>
+            <button (click)="scrollTo('projects')">View Projects</button>
+            <button class="outline" (click)="scrollTo('contact')">Contact Me</button>
+        </div>
+    </div>
+
+    <div class="image-content" [@slideFade]>
+        <img src="assets/images/profile.jpg" alt="Profile Image" class="profile-avatar"/>
+    </div>
+</section>
