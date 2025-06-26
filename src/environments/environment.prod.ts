@@ -1,6 +1,6 @@
 export const environment = {
   production: true,
-  emailServiceID: '',
-  emailTemplateID: '',
-  emailPublicKey: ''
+  emailServiceID: process.env['emailServiceID'],
+  emailTemplateID: process.env['emailTemplateID'],
+  emailPublicKey: process.env['emailPublicKey'],
 };
