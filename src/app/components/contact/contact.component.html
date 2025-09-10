@@ -1,45 +1,78 @@
 <section class="contact-container" [@fadeIn]>
-  <h2>Contact Me</h2>
-  <p class="contact-intro">
-    Interested in working together or have a question? Feel free to reach out through the form below.
+  <h2 class="section-title">Let’s Connect</h2>
+  <p class="section-subtitle">
+    I’d love to hear from you! Whether it’s a project idea, collaboration, or just a quick hello
+    drop me a message below.
   </p>
 
-  <form (ngSubmit)="sendMessage()" #contactForm="ngForm" class="contact-form">
-    <div class="form-group">
-      <input
-        type="text"
-        [(ngModel)]="name"
-        name="name"
-        placeholder="Your Name"
-        required
-        class="form-control"
-      />
+  <div class="contact-grid">
+    <!-- Left: Contact Info -->
+    <div class="contact-info">
+      <div class="info-card">
+        <i class="fa-solid fa-envelope"></i>
+        <h3>Email</h3>
+        <p>
+  <a href="mailto:j.dharaneesh12&#64;gmail.com">
+    j.dharaneesh12&#64;gmail.com
+  </a>
+</p>
+
+      </div>
+      <div class="info-card">
+        <i class="fa-solid fa-phone"></i>
+        <h3>Phone</h3>
+        <p><a href="tel:+919585893555">+91 95858 93555</a></p>
+      </div>
+      <div class="info-card">
+        <i class="fa-solid fa-location-dot"></i>
+        <h3>Location</h3>
+        <p>Coimbatore, India</p>
+      </div>
+      <!-- <div class="social-icons">
+        <a href="https://github.com/J-DHARANEESH" target="_blank"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/dharaneesh-j-022533294" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="mailto:j.dharaneesh12@gmail.com" target="_blank"><i class="fa-solid fa-envelope"></i></a>
+      </div> -->
     </div>
 
-    <div class="form-group">
-      <input
-        type="email"
-        [(ngModel)]="email"
-        name="email"
-        placeholder="Your Email"
-        required
-        class="form-control"
-      />
-    </div>
+    <!-- Right: Contact Form -->
+    <form (ngSubmit)="sendMessage()" #contactForm="ngForm" class="contact-form">
+      <div class="form-group">
+        <input
+          type="text"
+          [(ngModel)]="name"
+          name="name"
+          placeholder="Your Name"
+          required
+          class="form-control"
+        />
+      </div>
 
-    <div class="form-group">
-      <textarea
-        [(ngModel)]="message"
-        name="message"
-        placeholder="Your Message"
-        required
-        class="form-control"
-        rows="5"
-      ></textarea>
-    </div>
+      <div class="form-group">
+        <input
+          type="email"
+          [(ngModel)]="email"
+          name="email"
+          placeholder="Your Email"
+          required
+          class="form-control"
+        />
+      </div>
 
-    <button type="submit" class="send-button" [disabled]="!contactForm.form.valid">
-      Send Message
-    </button>
-  </form>
+      <div class="form-group">
+        <textarea
+          [(ngModel)]="message"
+          name="message"
+          placeholder="Your Message"
+          required
+          class="form-control"
+          rows="5"
+        ></textarea>
+      </div>
+
+      <button type="submit" class="send-button" [disabled]="!contactForm.form.valid">
+        <i class="fa-regular fa-paper-plane"></i> Send Message
+      </button>
+    </form>
+  </div>
 </section>

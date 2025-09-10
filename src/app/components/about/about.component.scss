@@ -1,119 +1,144 @@
+/* Glass Aurora About Page */
+
 .about-container {
   display: flex;
+  align-items: stretch;
   justify-content: space-between;
+  padding: 4rem 8%;
+  gap: 2rem;
+  flex-wrap: wrap;
+   background: 
+    conic-gradient(
+      from 90deg,
+      rgba(56, 189, 248, 0.25),
+      rgba(147, 51, 234, 0.25),
+      rgba(236, 72, 153, 0.25),
+      rgba(56, 189, 248, 0.25)
+    ),
+    linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  color: #e2e8f0;
+}
+
+/* Glass card effect */
+.about-card {
+  flex: 1 1 48%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  padding: 2rem;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 0 25px rgba(56, 189, 248, 0.15);
+  position: relative;
+  z-index: 1;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 0 40px rgba(236, 72, 153, 0.35);
+  }
+}
+
+/* Headings with neon gradient */
+.about-card h2,
+.about-card h3 {
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+  background: linear-gradient(90deg, #38bdf8, #a78bfa, #ec4899);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* About text */
+.about-card p {
+  color: #cbd5e1;
+  margin-bottom: 1rem;
+  line-height: 1.7;
+}
+
+/* Skills Tag Cloud */
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin-top: 1rem;
+
+  .skill {
+    background: rgba(147, 51, 234, 0.15);
+    border: 1px solid rgba(147, 51, 234, 0.4);
+    color: #a78bfa;
+    padding: 0.4rem 1rem;
+    border-radius: 12px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: linear-gradient(90deg, #38bdf8, #ec4899);
+      color: #0f172a;
+      box-shadow: 0 0 15px rgba(56, 189, 248, 0.5);
+    }
+  }
+}
+
+/* Tools List with glowing bullets */
+.tools {
+  margin-top: 1rem;
+  list-style: none;
+  padding: 0;
+
+  li {
+    margin-bottom: 0.6rem;
+    padding-left: 1.5rem;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 7px;
+      width: 10px;
+      height: 10px;
+      background: linear-gradient(135deg, #38bdf8, #ec4899);
+      border-radius: 50%;
+      box-shadow: 0 0 8px rgba(236, 72, 153, 0.7);
+    }
+  }
+}
+
+/* Image Card */
+.about-image {
+  flex: 1 1 40%;
+  display: flex;
   align-items: center;
-  padding: 15px 80px;
-  background-color: #ffffff;
-  color: #1a1a1a;
-  padding-bottom: 100px; 
+  justify-content: center;
 
+  img {
+    width: 300px;
+    border-radius: 50%;
+    border: 4px solid #38bdf8;
+    box-shadow: 0 0 40px rgba(147, 51, 234, 0.6);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
 
-  .about-text {
-    max-width: 60%;
-
-    h2 {
-      font-size: 2.5rem;
-      margin-bottom: 20px;
-      color: #007BFF;
-    }
-
-    .intro {
-      font-size: 1.2rem;
-      font-weight: 500;
-      margin-bottom: 20px;
-      color: #333;
-    }
-
-    p {
-      font-size: 1.05rem;
-      line-height: 1.7;
-      margin-bottom: 15px;
-    }
-
-    h3 {
-      margin-top: 30px;
-      font-size: 1.3rem;
-      color: #0056b3;
-    }
-
-    .skills {
-      margin-top: 10px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-
-      .skill {
-        background-color: #e8f0fe;
-        color: #007BFF;
-        padding: 6px 14px;
-        border-radius: 20px;
-        font-size: 0.95rem;
-        font-weight: 500;
-      }
-    }
-
-    .tools {
-      margin-top: 10px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-left: -38px;
-
-      li {
-        background-color: #e0f7fa;
-        color: #00796b;
-        padding: 6px 14px;
-        border-radius: 20px;
-        font-size: 0.95rem;
-        font-weight: 500;
-        list-style: none;
-        transition: transform 0.3s ease;
-
-        &:hover {
-          transform: scale(1.05);
-          background-color: #b2ebf2;
-        }
-      }
-    }
-  }
-
-  .about-image {
-    max-width: 35%;
-
-    img {
-      width: 100%;
-      animation: float 6s ease-in-out;
+    &:hover {
+      transform: scale(1.08);
+      box-shadow: 0 0 60px rgba(236, 72, 153, 0.8);
     }
   }
 }
 
-@keyframes float {
-  0% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-12px);
-  }
-
-  100% {
-    transform: translateY(0);
-  }
-}
-
-@media (max-width: 768px) {
+/* Responsive */
+@media (max-width: 992px) {
   .about-container {
-    flex-direction: column-reverse;
-    padding: 40px 20px;
+    flex-direction: column;
+  }
+
+  .about-card,
+  .about-image {
+    flex: 1 1 100%;
     text-align: center;
+  }
 
-    .about-text {
-      max-width: 100%;
-    }
-
-    .about-image {
-      max-width: 80%;
-      margin-bottom: 30px;
-    }
+  .about-image img {
+    width: 220px;
   }
 }
