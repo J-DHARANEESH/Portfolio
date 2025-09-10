@@ -1,23 +1,25 @@
 <section class="home-container">
-    <div class="text-content" [@slideFade]>
-        <h1>Hello, I'm <span>Dharaneesh J</span></h1>
-        <h2>Full Stack Developer</h2>
-        <p>
-            A passionate full-stack developer who bridges the gap between software engineering and intelligent systems. 
-            I specialize in building responsive, scalable web applications, with a strong focus on clean code, performance, 
-            and intuitive UI/UX."
-        </p>
+  <div class="text-content" [@slideFade]>
+    <h1>Hello, I'm <span class="highlight">Dharaneesh J</span></h1>
+    <h2 class="role">Full Stack Developer</h2>
+    <p class="intro">
+      A passionate full-stack developer who bridges the gap between software engineering and intelligent systems. 
+      I specialize in building responsive, scalable web applications, with a strong focus on clean code, performance, 
+      and intuitive UI/UX.
+    </p>
 
-        <div class="buttons">
-            <a href="assets/documents/Dharaneesh_Profile.pdf" download>
-                <button class="resume">Resume</button>
-            </a>
-            <button (click)="scrollTo('projects')">View Projects</button>
-            <button class="outline" (click)="scrollTo('contact')">Contact Me</button>
-        </div>
+    <div class="buttons">
+      <a href="assets/documents/Dharaneesh_Profile.pdf" download>
+        <button class="btn primary">Download Resume</button>
+      </a>
+      <button class="btn secondary" (click)="scrollTo('projects')">View Projects</button>
+      <button class="btn outline" (click)="scrollTo('contact')">Contact Me</button>
     </div>
+  </div>
 
-    <div class="image-content" [@slideFade]>
-        <img src="assets/images/profile.jpg" alt="Profile Image" class="profile-avatar"/>
+  <div class="image-content" [@fadeIn]>
+    <div class="profile-glow">
+      <img src="assets/images/profile.jpg" alt="Profile Image" class="profile-avatar"/>
     </div>
+  </div>
 </section>
