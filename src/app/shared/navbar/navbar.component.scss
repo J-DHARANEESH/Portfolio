@@ -68,13 +68,14 @@
   }
 }
 
-/* HAMBURGER ICON */
+/* HAMBURGER ICON (Left Side Now) */
 .hamburger {
   display: none;
   flex-direction: column;
   cursor: pointer;
   gap: 6px;
-  margin-left: auto;
+  margin-right: auto;   /* 👈 push it to the left */
+  margin-left: 20px;    /* spacing from edge */
 
   span {
     width: 25px;
@@ -84,27 +85,46 @@
     transition: all 0.3s ease;
   }
 }
-
 /* MOBILE MENU */
 .mobile-menu {
   display: none;
   flex-direction: column;
   position: absolute;
   top: 70px;
-  right: 20px;
+  left: 20px;  /* 👈 dropdown on left */
   background: #0a0f1c;
   border-radius: 8px;
   padding: 1.5rem;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+  z-index: 999;
 
   a {
     color: #d1d9e6;
     text-decoration: none;
     padding: 0.8rem 0;
-    transition: 0.3s;
+    position: relative;
+    transition: color 0.3s ease;
 
+    /* Hover Text Glow */
     &:hover {
       color: #00e6ff;
+      text-shadow: 0 0 8px rgba(0, 230, 255, 0.8);
+    }
+
+    /* Underline Animation */
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 2px;
+      width: 0;
+      background: linear-gradient(90deg, #00e6ff, #a855f7);
+      transition: width 0.4s ease;
+    }
+
+    &:hover::after {
+      width: 100%;  /* 👈 underline grows in from left */
     }
   }
 
@@ -114,6 +134,7 @@
   }
 }
 
+/* Dropdown Animation */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(-10px); }
   to { opacity: 1; transform: translateY(0); }
